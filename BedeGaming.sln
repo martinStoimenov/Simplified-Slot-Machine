@@ -5,8 +5,6 @@ VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BedeGaming", "Bede-gaming\BedeGaming.csproj", "{A4D2A072-BE4D-4EF0-825E-C11E9E25C428}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox", "Sandbox\Sandbox.csproj", "{DBEFC299-0F67-4354-94D4-01177756B47D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{A4D2A072-BE4D-4EF0-825E-C11E9E25C428}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4D2A072-BE4D-4EF0-825E-C11E9E25C428}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4D2A072-BE4D-4EF0-825E-C11E9E25C428}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DBEFC299-0F67-4354-94D4-01177756B47D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DBEFC299-0F67-4354-94D4-01177756B47D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DBEFC299-0F67-4354-94D4-01177756B47D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DBEFC299-0F67-4354-94D4-01177756B47D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
