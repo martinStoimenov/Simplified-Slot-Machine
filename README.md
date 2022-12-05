@@ -1,1 +1,1 @@
-# Bede-gaming
+# Simplified Slot machine game
