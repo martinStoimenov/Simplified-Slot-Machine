@@ -1,6 +1,8 @@
-﻿namespace Bede_gaming.Models
+﻿using Bede_gaming.Services.Interfaces;
+
+namespace Bede_gaming.Models
 {
-    public class Symbol : Config, ISymbol
+    public class Symbol : SymbolBase, ISymbol
     {
         public int ProbabilityRangeStart { get; set; }
         public int ProbabilityRangeEnd { get; set; }

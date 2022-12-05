@@ -4,5 +4,6 @@
     {
         decimal AskForStake(decimal balance);
         decimal Welcome();
+        void PrintReelCombinations(ref ISymbol[,] spinCombinations, List<ISymbol> symbols);
     }
 }

@@ -1,0 +1,22 @@
+[
+  {
+    "Name" : "A",
+    "Coefficient" : 0.4,
+    "ProbabilityPercentage" : 45
+  },
+  {
+    "Name" : "B",
+    "Coefficient" : 0.6,
+    "ProbabilityPercentage" : 35
+  },
+  {
+    "Name" : "P",
+    "Coefficient" : 0.8,
+    "ProbabilityPercentage" : 15
+  },
+  {
+    "Name" : "*",
+    "Coefficient" : 0,
+    "ProbabilityPercentage" : 5
+  }
+]

@@ -1,4 +1,4 @@
-﻿namespace Bede_gaming
+﻿namespace Bede_gaming.Services.Interfaces
 {
     public interface ISymbol
     {

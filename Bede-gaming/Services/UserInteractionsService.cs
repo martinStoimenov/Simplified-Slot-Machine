@@ -46,5 +46,24 @@ namespace Bede_gaming.Services
             Console.WriteLine();
             return stakeAmount;
         }
+        public void PrintReelCombinations(ref ISymbol[,] spinCombinations, List<ISymbol> symbols)
+        {
+            for (int i = 0; i < spinCombinations.GetLength(0); i++)
+            {
+                for (int j = 0; j < spinCombinations.GetLength(1); j++)
+                {
+                    Random random = new Random();
+                    int randomRangeEnd = symbols[symbols.IndexOf(symbols.Last())].ProbabilityRangeEnd + 1;
+                    int randomNumber = random.Next(symbols[0].ProbabilityRangeStart, randomRangeEnd);
+
+                    var symbol = symbols.Where(x => randomNumber >= x.ProbabilityRangeStart && randomNumber <= x.ProbabilityRangeEnd).First();
+
+                    spinCombinations[i, j] = symbol;
+                    Console.Write(symbol.Name);
+                }
+                Console.WriteLine();
+            }
+            //TODO think of error conditions OR return default value which will not break the program
+        }
     }
 }

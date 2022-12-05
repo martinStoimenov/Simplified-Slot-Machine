@@ -1,5 +1,4 @@
 ﻿using Bede_gaming;
-using Bede_gaming.Services;
 
 namespace BedeGaming
 {
@@ -7,11 +6,8 @@ namespace BedeGaming
     {
         static void Main(string[] args)
         {
-            //TODO try to create DI container and use it
-            var infoService = new InformationService();
-            var userInteractionService = new UserInteractionsService(infoService);
+            var slotMachine = new HostExtensions().GetService<SlotMachine>();
 
-            var slotMachine = new SlotMachine(infoService, userInteractionService);
             slotMachine.Run();
         }
     }
