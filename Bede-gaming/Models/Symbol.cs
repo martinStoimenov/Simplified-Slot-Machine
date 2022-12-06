@@ -1,4 +1,4 @@
-﻿using Bede_gaming.Services.Interfaces;
+﻿using Bede_gaming.Models.Interfaces;
 
 namespace Bede_gaming.Models
 {

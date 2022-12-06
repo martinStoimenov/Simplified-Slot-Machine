@@ -1,25 +1,27 @@
-﻿using Bede_gaming.Services.Interfaces;
+﻿using Bede_gaming.Models.Interfaces;
+using Bede_gaming.Services.Interfaces;
 
 namespace Bede_gaming.Services
 {
     public class UserInteractionsService : IUserInteractionsService
     {
-        private readonly IInformationService _infoService;
-        
-        public UserInteractionsService(IInformationService infoService)
+        private readonly IInformationService infoService;
+        private readonly IInputConverter inputConverter;
+
+        public UserInteractionsService(IInformationService infoService, IInputConverter inputConverter)
         {
-            _infoService = infoService;
+            this.infoService = infoService;
+            this.inputConverter = inputConverter;
         }
 
         public decimal Welcome()
         {
-            _infoService.WriteLine("Please deposit money you would like to play with:");
-            bool isSuccessfull = decimal.TryParse(Console.ReadLine(), out decimal result);
-            var depositAmount = isSuccessfull ? result : 0;
+            infoService.WriteLine("Please deposit money you would like to play with:");
+            decimal depositAmount = inputConverter.TryConvertToDecimal(Console.ReadLine());
 
             if (depositAmount <= 0)
             {
-                _infoService.WriteLine("Amount must be number and cannot be less than or equal to zero");
+                infoService.WriteLine("Amount must be number and cannot be less than or equal to zero");
                 return Welcome();
             }
             return depositAmount;
@@ -29,8 +31,7 @@ namespace Bede_gaming.Services
         {
             Console.WriteLine();
             Console.WriteLine("Enter stake amount:");
-            bool stakeParse = decimal.TryParse(Console.ReadLine(), out decimal result);
-            var stakeAmount = stakeParse ? result : 0;
+            decimal stakeAmount = inputConverter.TryConvertToDecimal(Console.ReadLine());
 
             if (stakeAmount <= 0)
             {

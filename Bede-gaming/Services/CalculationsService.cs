@@ -1,9 +1,26 @@
-﻿using Bede_gaming.Services.Interfaces;
+﻿using Bede_gaming.Models;
+using Bede_gaming.Models.Interfaces;
 
 namespace Bede_gaming.Services
 {
     public class CalculationsService : ICalculationsService
     {
+        public void SetProbabilityRanges(ref List<Symbol> symbols)
+        {
+            for (int i = 0; i < symbols.Count(); i++)
+            {
+                if (i == 0)
+                {
+                    symbols[i].ProbabilityRangeStart = 1;
+                    symbols[i].ProbabilityRangeEnd = decimal.ToInt32(symbols[i].ProbabilityPercentage);
+                }
+                else
+                {
+                    symbols[i].ProbabilityRangeStart = symbols[i - 1].ProbabilityRangeEnd + 1;
+                    symbols[i].ProbabilityRangeEnd = decimal.ToInt32(symbols[i - 1].ProbabilityRangeEnd) + decimal.ToInt32(symbols[i].ProbabilityPercentage);
+                }
+            }
+        }
         public decimal GetWonAmountFromCombination(ISymbol[,] spinCombinations, decimal stake)
         {
             decimal amount = 0;

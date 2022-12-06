@@ -1,5 +1,7 @@
-﻿using Bede_gaming.Services;
+﻿using Bede_gaming.Models.Interfaces;
+using Bede_gaming.Services;
 using Bede_gaming.Services.Interfaces;
+using Bede_gaming.SlotMachineConfig;
 
 namespace Bede_gaming
 {
@@ -7,12 +9,12 @@ namespace Bede_gaming
     {
         private readonly IInformationService infoService;
         private readonly IUserInteractionsService userInteractionService;
-        private readonly ISlotMachineConfig slotMachineConfig;
+        private readonly ISlotMachineConfigReader slotMachineConfig;
         private readonly ICalculationsService calcService;
 
         public SlotMachine(IInformationService infoService,
             IUserInteractionsService userInteractionService,
-            ISlotMachineConfig slotMachineConfig,
+            ISlotMachineConfigReader slotMachineConfig,
             ICalculationsService calcService)
         {
             this.infoService = infoService;

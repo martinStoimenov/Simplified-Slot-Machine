@@ -2,7 +2,9 @@
 using Bede_gaming.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-namespace Bede_gaming
+using Bede_gaming.SlotMachineConfig;
+
+namespace Bede_gaming.Extensions
 {
     public class HostExtensions
     {
@@ -11,8 +13,9 @@ namespace Bede_gaming
             using IHost host = Host.CreateDefaultBuilder()
             .ConfigureServices((context, services) =>
                 services.AddTransient<IInformationService, InformationService>()
+                .AddTransient<IInputConverter, InputConverter>()
                 .AddTransient<IUserInteractionsService, UserInteractionsService>()
-                .AddTransient<ISlotMachineConfig, SlotMachineConfig>()
+                .AddTransient<ISlotMachineConfigReader, SlotMachineConfigReader>()
                 .AddTransient<ICalculationsService, CalculationsService>())
             .Build();
 
